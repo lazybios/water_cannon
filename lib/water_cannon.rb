@@ -1,4 +1,5 @@
 require "water_cannon/version"
+require "auto-correct"
 
 module WaterCannon
   module String
@@ -43,7 +44,7 @@ module WaterCannon
       self.gsub! /\n\n+/, "\n"
 
       # remove emoji
-      strip_emoji(self)
+      strip_emoji(self).auto_space!
     end
 
     private
